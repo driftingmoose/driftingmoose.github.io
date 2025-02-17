@@ -28,8 +28,10 @@ If the “Buddy is ready!” message appears you are good to go.
 
 Key
 : Definition
+OpenAI API Key
+: Your API key.[^1]
 
-| OpenAI API Key | Your API key. * |
+
 | Base URL | URL for the OpenAI API or proxy server. |
 |Test connection|Runs a series of tests to make sure your credentials work with the specified server.|
 |Use Custom Model|If checked you will be able to specify any name of a model in the new text field. Useful when working with proxies or for specific model versions.|
@@ -52,12 +54,12 @@ Use Completions
 Force Code Buddy to use Completions API instead of assistants and threads. This option is used for work for some proxies (https://api.pawan.krd/ for ex.) or if you don’t want to create any assistants on your profile.
 It is recommended not to use it if possible. Assistants API is much more efficient and cheaper than the Completions API.
 Initialize
-Press to initialize the assistant**, or re-initialize it after a model change.
+Press to initialize the assistant[^2], or re-initialize it after a model change.
 Reset
 Reset all settings to the default state
 (does not remove assistant from OpenAI account)
 
 
- *Your API key is stored encrypted in the Project Settings.
-           **Code Buddy creates a new assistant for every project.
+[^1]: Your API key is stored encrypted in the Project Settings.
+[^2]: Code Buddy creates a new assistant for every project.
 
