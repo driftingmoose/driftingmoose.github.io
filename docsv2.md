@@ -1,3 +1,7 @@
+title: Code Buddy v2.0.3
+layout: home
+---
+
 # Documentation
 ## Code Buddy for Unity v2.0.3
 
