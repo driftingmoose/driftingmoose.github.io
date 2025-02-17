@@ -86,8 +86,7 @@ To open Code Buddy go to Window -> Code Buddy -> Code with Buddy
 It is very straightforward:
 
 - “Send” button launches generation
-- Paperclip button allows you to attach
-- scripts to the chat
+- Paperclip button allows you to attach scripts to the chat
 - “+” button starts new conversation
 - “History” shows list of all chats
 
@@ -111,3 +110,35 @@ It is most useful when generating only partial
 changes and not whole class.
 
 <br clear="right"/>
+
+### Edit script
+
+<img align="right" src="assets/v2/update item attach.png" width=300>
+
+You can edit existing scripts with Code Buddy.
+There are 3 options:
+1. Open the context menu for the MonoBehaviour
+in the inspector and select
+“Edit Script with Buddy”.
+2. Right-click on the script in the Project panel
+and select “Edit Script with Buddy”.
+3. Drag-n-drop desired script to the message
+field or attach it by pressin paperclip button
+
+Add instructions and hit Send.
+
+When generation is complete, if you are happy with
+the result hit “Update” and that’s it.
+
+<br clear="right"/>
+
+<img align="right" src="assets/v2/update item.png" width=300>
+
+
+Alternatively, with default instructions Buddy should
+ask you to provide him with the source code, if there
+is none in the previous conversation.
+
+<br clear="right"/>
+
+If you have any more questions you can ask them at our [Discord](https://discord.gg/JdsepFhEeX)
