@@ -76,3 +76,38 @@ Reset
 
 [^1]: Your API key is stored encrypted in the Project Settings.
 [^2]: Code Buddy creates a new assistant for every project.
+
+### Generate new scripts
+
+To open Code Buddy go to Window -> Code Buddy -> Code with Buddy
+
+<img align="right" src="assets/v2/buddy empty window.png" width=300>
+
+It is very straightforward:
+
+- “Send” button launches generation
+- Paperclip button allows you to attach
+- scripts to the chat
+- “+” button starts new conversation
+- “History” shows list of all chats
+
+<br clear="right"/>
+
+Write the instructions and hit “Send”.
+
+<img align="right" src="assets/v2/hello world.png" width=300>
+
+“Save” button will save code to the Default script
+folder or open the Save File dialogue so you can
+choose where to put the new script in your project
+if Ask where to save selected in the settings.
+
+If you have selected game object in your Hierarchy
+“Save and Add” button will appear. It automatically
+adds script to the selected object after saving.
+
+“Copy” - copies code into the buffer.
+It is most useful when generating only partial
+changes and not whole class.
+
+<br clear="right"/>
