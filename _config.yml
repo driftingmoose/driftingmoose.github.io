@@ -1,8 +1,9 @@
 title: Code Buddy Documentation
 description: Documentation, tutorials, and how-tos for Code Buddy for Unity - project-aware GPT code generation asset
 theme: just-the-docs
+favicon_ico: "./favicon.ico"
 
 url: https://driftingmoose.com
 
 aux_links:
-  Asset Store: https://assetstore.unity.com/packages/slug/300457 
+  Asset Store: https://assetstore.unity.com/packages/slug/300457
