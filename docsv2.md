@@ -1,3 +1,4 @@
+---
 title: Code Buddy v2.0.3
 layout: home
 ---
