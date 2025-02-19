@@ -1,13 +1,12 @@
 ---
 title: Code Buddy v2.0.3
 layout: home
+nav_order: 10
 ---
 
-## Code Buddy for Unity v2.0.3
+## Documentation for Code Buddy for Unity v2.0.3
 
 If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to contact support
-
-Documentation for v1.1 is here
 
 ### Create OpenAI API key
 
@@ -133,7 +132,6 @@ the result hit “Update” and that’s it.
 <br clear="right"/>
 
 <img align="right" src="assets/v2/update item.png" width=300>
-
 
 Alternatively, with default instructions Buddy should
 ask you to provide him with the source code, if there

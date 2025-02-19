@@ -5,33 +5,201 @@ layout: home
 
 # Code Buddy Documentation
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to contact support
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+Documentation for v2.0 is [here](/docsv2.html)
 
-More specifically, the created site:
+## Table of contents
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+- [Start with OpenAI](#start-with-openai)
+- [Start with Ollama](#start-with-ollama)
+- [Start with DeepSeek](#start-with-deepseek)
+- [Settings](#settings)
+- [Main operations](#main-operations)
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+## Start with OpenAI
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+### Create OpenAI API key
 
-To get started with creating a site, simply:
+1. Sign in or sign up to OpenAI [https://platform.openai.com/](https://platform.openai.com/)
+2. Make sure you have an active balance on the account, and top up it if necessary.
+3. Go to [https://platform.openai.com/organization/api-keys](https://platform.openai.com/organization/api-keys) and create an API key with all permissions. CodeBuddy needs it to initialize and use the assistant.
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+### Configure Code Buddy
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+1. Go to **Edit->Project Settings…->Code Buddy**
+2. Paste your API key in the “OpenAI API Key” field
+3. Choose the model
+4. If you use **OpenAI Assistant** - press the Initialize button
 
-----
+![Settings](/assets/v25/settingsfilled.png)
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+You are ready to go! [Start creating new scripts.](#generate-new-scripts)
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+## Start with Ollama
+
+### Install and configure Ollama
+
+1. Install Ollama from the official website [https://ollama.com/download](https://ollama.com/download)
+2. After installation is complete install at least one model using website [https://ollama.com/search](https://ollama.com/search) or using Terminal with command `ollama run <model_name>`. For example, to install the llama 3.2 model, use the command `ollama run llama3.2`.
+
+You can read more about using Ollama [here](https://github.com/ollama/ollama/blob/main/README.md).
+
+### Configure Code Buddy
+
+1. After model download is finished make sure Ollama is running and go to Code Buddy settings in **Edit->Project Settings…->Code Buddy**.
+2. In the **Provider:** dropdown choose Ollama.
+3. Press **Refresh** button.
+4. The newly installed model should appear in the **Model:** dropdown.
+
+![Ollama Settings](/assets/v25/ollama%20settings.png)
+
+You are ready for [code generation](#generate-new-scripts).
+
+## Start with DeepSeek
+
+### Create DeepSeek API key
+
+1. Go to [https://platform.deepseek.com/](https://platform.deepseek.com/) and sign up or login to your account.
+2. Make sure you have a positive balance on the account.
+3. Create a new API key at the page [https://platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys).
+
+### Configure Code Buddy
+
+1. Go to **Edit->Project Settings…->Code Buddy**
+2. Select **DeepSeek** from **Provider:** drop down list.
+3. Paste your API key in the DeepSeek API Key” field.
+4. Choose the model from the list.
+
+![DeepSeek Settings](/assets/v25/settings%20deepseek.png)
+
+You are ready to [create your first script](#generate-new-scripts)
+
+## Settings
+
+This is the full list of available settings. Final set that you will see on the settings page will slightly differ depending on the currently selected provider.
+
+OpenAI API Key
+: Your OpenAI API key.[^1]
+
+DeepSeek API Key
+: Your DeepSeek API key.[^1]
+
+Base URL
+: URL for the provider or proxy server.
+
+Refresh button
+: Refreshes list of available Ollama models.
+
+Test connection button
+: Runs a series of tests to make sure your credentials work with the specified server.
+
+Use Custom Model
+: If checked you will be able to specify any name of a model in the new text field. Useful when working with proxies or for specific model versions.
+
+Model
+: The model used for the assistant. o1 and o3 models are available only with the “OpenAI Completions” option.|
+
+Context size
+: The size of the context window used to generate the next token. Bigger numbers will require more RAM to run models.
+
+Instructions
+: Main prompt for the model.
+
+Include Editor Folder
+: Add the content of the “Editor” folders into the project context.
+By default, Code Buddy ignores any editor extension code to optimize requests, but this option allows you to work with editor extensions as well.
+
+Ask Where to Save
+: If selected, Code Buddy will ask you where to save new files. If not, all files will be saved in the default script folder.
+
+Default script folder
+: Default folder for saving new scripts.
+
+Temperature
+: Defines randomness of the response. It is recommended to leave it at a minimum for consistency.
+
+Use Completions
+: Force Code Buddy to use Completions API instead of assistants and threads. This option is used for work for some proxies ([https://api.pawan.krd/](https://api.pawan.krd/) for ex.) or if you don’t want to create any assistants on your profile.
+It is recommended not to use it if possible. Assistants API is much more efficient and cheaper than the Completions API.
+
+Initialize
+: Press to initialize the assistant[^2], or re-initialize it after a model change.
+
+Clear History
+: Clears all chat history for all providers.
+
+Reset
+: Reset all settings to the default state
+(does not remove assistant from OpenAI account)
+
+
+[^1]: Your API key is stored encrypted in the Project Settings.
+[^2]: Code Buddy creates a new assistant for every project.
+
+## Main operations
+
+### Generate new scripts
+
+To open Code Buddy go to Window -> Code Buddy -> Code with Buddy.
+
+<img align="right" src="assets/v2/buddy empty window.png" width=300>
+
+It is very straightforward:
+
+- “Send” button launches generation
+- Paperclip button allows you to attach scripts to the chat
+- “+” button starts new conversation
+- “History” shows a list of all chats
+
+<br clear="right"/>
+
+Write the instructions and hit “Send”.
+
+<img align="right" src="assets/v2/hello world.png" width=300>
+
+“Save” button will save the code to the Default script
+folder or open the Save File dialogue so you can
+choose where to put the new script in your project
+if **Ask where to save** selected in the settings.
+
+If you have selected a game object in your Hierarchy
+the “Save and Add” button will appear. It automatically
+adds a script to the selected object after saving.
+
+“Copy” - copies code into the buffer.
+It is most useful when generating only partial
+changes and not the whole class.
+
+<br clear="right"/>
+
+### Edit script
+
+<img align="right" src="assets/v2/update item attach.png" width=300>
+
+You can edit existing scripts with Code Buddy.
+There are 3 options:
+1. Open the context menu for the MonoBehaviour
+in the inspector and select
+“Edit Script with Buddy”.
+2. Right-click on the script in the Project panel
+and select “Edit Script with Buddy”.
+3. Drag-n-drop the desired script to the message
+field or attach it by pressing the paperclip button
+
+Add instructions and hit Send.
+
+When generation is complete if you are happy with
+the result hit “Update” and that’s it.
+
+<br clear="right"/>
+
+<img align="right" src="assets/v2/update item.png" width=300>
+
+Alternatively, with default instructions, Buddy should
+ask you to provide him with the source code, if there
+is none in the previous conversation.
+
+<br clear="right"/>
+
+If you have any more questions you can ask them at our [Discord](https://discord.gg/JdsepFhEeX)
