@@ -6,9 +6,11 @@ nav_order: 1
 
 # Code Buddy Documentation
 
-If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to contact support
+You can find latest documentation online at [https://docs.driftingmoose.com/](https://docs.driftingmoose.com/).
 
-Documentation for v2.0 is [here](/docsv2.html)
+If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to contact support.
+
+Documentation for v2.0 is [here](/docsv2.html).
 
 ## Table of contents
 
