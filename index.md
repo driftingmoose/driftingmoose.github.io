@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
 # Code Buddy Documentation
@@ -98,7 +99,7 @@ Use Custom Model
 : If checked you will be able to specify any name of a model in the new text field. Useful when working with proxies or for specific model versions.
 
 Model
-: The model used for the assistant. o1 and o3 models are available only with the “OpenAI Completions” option.|
+: The model used for the assistant. o1 and o3 models are available only with the “OpenAI Completions” option.
 
 Context size
 : The size of the context window used to generate the next token. Bigger numbers will require more RAM to run models.
