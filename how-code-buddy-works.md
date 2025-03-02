@@ -66,7 +66,7 @@ Properties:
 - TimeSinceStart : float - The time elapsed since the game started.
 
 Methods:
-- RegisterEnemyHit() : void
+- RegisterEnemyHit() : void - Increments the enemy hit count.
 ```
 
 To gather all this information, Buddy uses a combination of reflection and source file parsing. This approach minimizes context size, speed of executions, and significantly reduces request costs while providing all the necessary details for generating new code. Essentially, this process mirrors how a developer writes code manually, relying only on the public interface.
