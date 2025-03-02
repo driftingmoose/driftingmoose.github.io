@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Code Buddy Documentation
 layout: home
 nav_order: 1
 ---
@@ -9,8 +9,6 @@ nav_order: 1
 You can find latest documentation online at [https://docs.driftingmoose.com/](https://docs.driftingmoose.com/).
 
 If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to contact support.
-
-Documentation for v2.0 is [here](/docsv2.html).
 
 ## Table of contents
 
@@ -204,5 +202,7 @@ ask you to provide him with the source code, if there
 is none in the previous conversation.
 
 <br clear="right"/>
+
+You can find more details about how code buddy works under the hood in [this article](/how-code-buddy-works.html).
 
 If you have any more questions you can ask them at our [Discord](https://discord.gg/JdsepFhEeX)
