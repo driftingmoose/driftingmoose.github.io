@@ -85,6 +85,6 @@ A special note should be made about class inclusion rules in the project context
 
 ## Conclusion
 
-I hope this information helps you better understand how Code Buddy works and how to use it more effectively. If you have any questions or need additional help, feel free to reach out to me on the [discord server](https://docs.driftingmoose.com/).
+I hope this information helps you better understand how Code Buddy works and how to use it more effectively. If you have any questions or need additional help, feel free to reach out to me on the [discord server](https://discord.gg/JdsepFhEeX).
 
 Happy coding!
