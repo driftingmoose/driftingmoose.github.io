@@ -1,7 +1,7 @@
 ---
 title: How Code Buddy Works
 layout: home
-nav_order: 2
+nav_order: 3
 ---
 
 # How Code Buddy Works

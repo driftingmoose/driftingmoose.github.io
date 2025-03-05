@@ -1,10 +1,10 @@
 ---
-title: Code Buddy Documentation
+title: Getting Started
 layout: home
 nav_order: 1
 ---
 
-# Code Buddy Documentation
+# Getting Started
 
 You can find latest documentation online at [https://docs.driftingmoose.com/](https://docs.driftingmoose.com/).
 
