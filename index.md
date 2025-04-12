@@ -10,6 +10,8 @@ You can find latest documentation online at [https://docs.driftingmoose.com/](ht
 
 If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to contact support.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DI0LMVRDQ2k?si=mGKqlxre5ww-vrmS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> </iframe>
+
 ## Table of contents
 
 - [Start with OpenAI](#start-with-openai)
