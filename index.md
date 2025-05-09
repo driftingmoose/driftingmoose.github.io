@@ -14,21 +14,29 @@ If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to
 
 ## Table of contents
 
-- [Start with OpenAI](#start-with-openai)
-- [Start with Ollama](#start-with-ollama)
-- [Start with DeepSeek](#start-with-deepseek)
-- [Settings](#settings)
+- [Configure AI providers](#configure-ai-providers)
+  - [OpenAI](#openai)
+  - [Ollama](#ollama)
+  - [DeepSeek](#deepseek)
+  - [Gemini](#gemini)
+  - [Claude](#claude)
+- [Settings overview](#settings)
 - [Main operations](#main-operations)
+  - [Generate new scripts](#generate-new-scripts)
+  - [Edit scripts](#edit-script)
+  - [Use external links](#use-external-docs-as-reference)
 
-## Start with OpenAI
+## Configure AI Providers
 
-### Create OpenAI API key
+### OpenAI
+
+#### Create OpenAI API key
 
 1. Sign in or sign up to OpenAI [https://platform.openai.com/](https://platform.openai.com/)
 2. Make sure you have an active balance on the account, and top up it if necessary.
 3. Go to [https://platform.openai.com/organization/api-keys](https://platform.openai.com/organization/api-keys) and create an API key with all permissions. CodeBuddy needs it to initialize and use the assistant.
 
-### Configure Code Buddy
+#### Configure Code Buddy
 
 1. Go to **Edit->Project Settings…->Code Buddy**
 2. Paste your API key in the “OpenAI API Key” field
@@ -39,16 +47,16 @@ If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to
 
 You are ready to go! [Start creating new scripts.](#generate-new-scripts)
 
-## Start with Ollama
+### Ollama
 
-### Install and configure Ollama
+#### Install and configure Ollama
 
 1. Install Ollama from the official website [https://ollama.com/download](https://ollama.com/download)
 2. After installation is complete install at least one model using website [https://ollama.com/search](https://ollama.com/search) or using Terminal with command `ollama run <model_name>`. For example, to install the llama 3.2 model, use the command `ollama run llama3.2`.
 
 You can read more about using Ollama [here](https://github.com/ollama/ollama/blob/main/README.md).
 
-### Configure Code Buddy
+#### Configure Code Buddy
 
 1. After model download is finished make sure Ollama is running and go to Code Buddy settings in **Edit->Project Settings…->Code Buddy**.
 2. In the **Provider:** dropdown choose Ollama.
@@ -59,40 +67,77 @@ You can read more about using Ollama [here](https://github.com/ollama/ollama/blo
 
 You are ready for [code generation](#generate-new-scripts).
 
-## Start with DeepSeek
+### DeepSeek
 
-### Create DeepSeek API key
+#### Create DeepSeek API key
 
 1. Go to [https://platform.deepseek.com/](https://platform.deepseek.com/) and sign up or login to your account.
 2. Make sure you have a positive balance on the account.
 3. Create a new API key at the page [https://platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys).
 
-### Configure Code Buddy
+#### Configure Code Buddy
 
 1. Go to **Edit->Project Settings…->Code Buddy**
 2. Select **DeepSeek** from **Provider:** drop down list.
-3. Paste your API key in the DeepSeek API Key” field.
+3. Paste your API key in the "DeepSeek API Key" field.
 4. Choose the model from the list.
 
 ![DeepSeek Settings](/assets/v25/settings%20deepseek.png)
 
 You are ready to [create your first script](#generate-new-scripts)
 
+### Gemini
+
+#### Create Gemini API key
+
+1. Go to [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) and press **Create API key**.
+2. Follow the instructions in case you will need to create Google Cloud project.
+3. Copy your key.
+
+#### Configure Code Buddy
+
+1. Go to **Edit->Project Settings…->Code Buddy**
+2. Select **Gemini** from **Provider:** drop down list.
+3. Paste your API key in the "Gemini API Key” field.
+4. Choose the model from the list.
+
+To get the latest list of available models, press **Refresh model list** button next to the dropdown.
+
+![Gemini Settings](/assets/v27/gemini-settings.png)
+
+Code Buddy is ready.
+
+### Claude
+
+#### Create Claude key
+
+1. Go to [https://console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) and **Create key**.
+2. Choose project and name the key.
+3. Copy your key.
+
+#### Configure Code Buddy
+
+1. Go to **Edit->Project Settings…->Code Buddy**
+2. Select **Claude** from **Provider:** drop down list.
+3. Paste your API key in the "Claude API Key" field.
+4. Choose the model from the list.
+
+To get the latest list of available models, press **Refresh model list** button next to the dropdown.
+
+![Claude Settings](/assets/v27/claude-settings.png)
+
 ## Settings
 
 This is the full list of available settings. Final set that you will see on the settings page will slightly differ depending on the currently selected provider.
 
-OpenAI API Key
-: Your OpenAI API key.[^1]
-
-DeepSeek API Key
-: Your DeepSeek API key.[^1]
+API Key
+: Your API key for selected provider.[^1]
 
 Base URL
 : URL for the provider or proxy server.
 
 Refresh button
-: Refreshes list of available Ollama models.
+: Refreshes list of available models.
 
 Test connection button
 : Runs a series of tests to make sure your credentials work with the specified server.
@@ -103,8 +148,11 @@ Use Custom Model
 Model
 : The model used for the assistant. o1 and o3 models are available only with the “OpenAI Completions” option.
 
-Context size
+Context size (for Ollama)
 : The size of the context window used to generate the next token. Bigger numbers will require more RAM to run models.
+
+Max tokens (for Claude)
+: The maximum number of tokens to generate before stopping. Each model has it's own maximum value so please check the [Claude documentation](https://docs.anthropic.com/en/docs/about-claude/models/all-models#model-comparison-table).
 
 Instructions
 : Main prompt for the model.
@@ -122,11 +170,7 @@ Default script folder
 Temperature
 : Defines randomness of the response. It is recommended to leave it at a minimum for consistency.
 
-Use Completions
-: Force Code Buddy to use Completions API instead of assistants and threads. This option is used for work for some proxies ([https://api.pawan.krd/](https://api.pawan.krd/) for ex.) or if you don’t want to create any assistants on your profile.
-It is recommended not to use it if possible. Assistants API is much more efficient and cheaper than the Completions API.
-
-Initialize
+Initialize (OpenAI assistant only)
 : Press to initialize the assistant[^2], or re-initialize it after a model change.
 
 Clear History
@@ -135,7 +179,6 @@ Clear History
 Reset
 : Reset all settings to the default state
 (does not remove assistant from OpenAI account)
-
 
 [^1]: Your API key is stored encrypted in the Project Settings.
 [^2]: Code Buddy creates a new assistant for every project.
@@ -202,6 +245,14 @@ the result hit “Update” and that’s it.
 Alternatively, with default instructions, Buddy should
 ask you to provide him with the source code, if there
 is none in the previous conversation.
+
+<br clear="right"/>
+
+### Use external docs as reference
+
+<img align="right" src="assets/v27/external-sources.png" width=300>
+
+You can add links to the request and Code Buddy will include content of the page as part of the request.
 
 <br clear="right"/>
 
