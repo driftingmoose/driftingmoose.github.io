@@ -1,3 +1,9 @@
+---
+title: Getting Started (print)
+layout: home
+nav_order: 10
+---
+
 # Getting Started
 
 You can find latest documentation online at [https://docs.driftingmoose.com/](https://docs.driftingmoose.com/).
