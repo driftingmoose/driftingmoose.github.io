@@ -6,7 +6,7 @@ nav_order: 1
 
 # Getting Started
 
-You can find latest documentation online at [https://docs.driftingmoose.com/](https://docs.driftingmoose.com/).
+<!-- You can find latest documentation online at [https://docs.driftingmoose.com/](https://docs.driftingmoose.com/). -->
 
 If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to contact support.
 
