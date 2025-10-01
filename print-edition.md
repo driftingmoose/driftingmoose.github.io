@@ -1,8 +1,8 @@
----
+<!-- ---
 title: Getting Started (print)
 layout: home
 nav_order: 10
----
+--- -->
 
 # Getting Started
 
