@@ -1,8 +1,8 @@
-<!-- ---
+---
 title: Getting Started (print)
 layout: home
 nav_order: 10
---- -->
+---
 
 # Getting Started
 
@@ -14,6 +14,7 @@ If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to
 
 ## Table of contents
 
+- [Quick start](#quick-start)
 - [Configure AI providers](#configure-ai-providers)
   - [OpenAI](#openai)
   - [Ollama](#ollama)
@@ -21,10 +22,17 @@ If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to
   - [Gemini](#gemini)
   - [Claude](#claude)
 - [Settings overview](#settings)
-- [Main operations](#main-operations)
-  - [Generate new scripts](#generate-new-scripts)
-  - [Edit scripts](#edit-script)
-  - [Use external links](#use-external-docs-as-reference)
+
+## Quick start
+
+<img align="right" src="assets/v2/buddy empty window.png" width=300>
+
+1. Go to Edit->Project Settings…->Code Buddy
+2. Choose AI provider and [configure it](#configure-ai-providers)
+3. Open Code Buddy by selecting Window -> Code Buddy -> Code with Buddy.
+4. Make your first request
+
+<br clear="right"/>
 
 ## Configure AI Providers
 
@@ -34,14 +42,13 @@ If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to
 
 1. Sign in or sign up to OpenAI [https://platform.openai.com/](https://platform.openai.com/)
 2. Make sure you have an active balance on the account, and top up it if necessary.
-3. Go to [https://platform.openai.com/organization/api-keys](https://platform.openai.com/organization/api-keys) and create an API key with all permissions. CodeBuddy needs it to initialize and use the assistant.
+3. Go to [https://platform.openai.com/organization/api-keys](https://platform.openai.com/organization/api-keys) and create an API.
 
 #### Configure Code Buddy
 
 1. Go to **Edit->Project Settings…->Code Buddy**
 2. Paste your API key in the “OpenAI API Key” field
 3. Choose the model
-4. If you use **OpenAI Assistant** - press the Initialize button
 
 ![Settings](/assets/v25/settingsfilled.png)
 
@@ -65,8 +72,6 @@ You can read more about using Ollama [here](https://github.com/ollama/ollama/blo
 
 ![Ollama Settings](/assets/v25/ollama%20settings.png)
 
-You are ready for [code generation](#generate-new-scripts).
-
 ### DeepSeek
 
 #### Create DeepSeek API key
@@ -83,8 +88,6 @@ You are ready for [code generation](#generate-new-scripts).
 4. Choose the model from the list.
 
 ![DeepSeek Settings](/assets/v25/settings%20deepseek.png)
-
-You are ready to [create your first script](#generate-new-scripts)
 
 ### Gemini
 
@@ -104,8 +107,6 @@ You are ready to [create your first script](#generate-new-scripts)
 To get the latest list of available models, press **Refresh model list** button next to the dropdown.
 
 ![Gemini Settings](/assets/v27/gemini-settings.png)
-
-Code Buddy is ready.
 
 ### Claude
 
@@ -146,7 +147,7 @@ Use Custom Model
 : If checked you will be able to specify any name of a model in the new text field. Useful when working with proxies or for specific model versions.
 
 Model
-: The model used for the assistant. o1 and o3 models are available only with the “OpenAI Completions” option.
+: The model used for the assistant.
 
 Context size (for Ollama)
 : The size of the context window used to generate the next token. Bigger numbers will require more RAM to run models.
@@ -161,17 +162,20 @@ Include Editor Folder
 : Add the content of the “Editor” folders into the project context.
 By default, Code Buddy ignores any editor extension code to optimize requests, but this option allows you to work with editor extensions as well.
 
+Excluded Folders
+: List of folders to exclude from the context.
+
 Ask Where to Save
 : If selected, Code Buddy will ask you where to save new files. If not, all files will be saved in the default script folder.
 
 Default script folder
 : Default folder for saving new scripts.
 
+Reinitialize project cache
+: Clear localy cached data about the project
+
 Temperature
 : Defines randomness of the response. It is recommended to leave it at a minimum for consistency.
-
-Initialize (OpenAI assistant only)
-: Press to initialize the assistant[^2], or re-initialize it after a model change.
 
 Clear History
 : Clears all chat history for all providers.
@@ -181,81 +185,7 @@ Reset
 (does not remove assistant from OpenAI account)
 
 [^1]: Your API key is stored encrypted in the Project Settings.
-[^2]: Code Buddy creates a new assistant for every project.
 
-## Main operations
-
-### Generate new scripts
-
-To open Code Buddy go to Window -> Code Buddy -> Code with Buddy.
-
-<img align="right" src="assets/v2/buddy empty window.png" width=300>
-
-It is very straightforward:
-
-- “Send” button launches generation
-- Paperclip button allows you to attach scripts to the chat
-- “+” button starts new conversation
-- “History” shows a list of all chats
-
-<br clear="right"/>
-
-Write the instructions and hit “Send”.
-
-<img align="right" src="assets/v2/hello world.png" width=300>
-
-“Save” button will save the code to the Default script
-folder or open the Save File dialogue so you can
-choose where to put the new script in your project
-if **Ask where to save** selected in the settings.
-
-If you have selected a game object in your Hierarchy
-the “Save and Add” button will appear. It automatically
-adds a script to the selected object after saving.
-
-“Copy” - copies code into the buffer.
-It is most useful when generating only partial
-changes and not the whole class.
-
-<br clear="right"/>
-
-### Edit script
-
-<img align="right" src="assets/v2/update item attach.png" width=300>
-
-You can edit existing scripts with Code Buddy.
-There are 3 options:
-1. Open the context menu for the MonoBehaviour
-in the inspector and select
-“Edit Script with Buddy”.
-2. Right-click on the script in the Project panel
-and select “Edit Script with Buddy”.
-3. Drag-n-drop the desired script to the message
-field or attach it by pressing the paperclip button
-
-Add instructions and hit Send.
-
-When generation is complete if you are happy with
-the result hit “Update” and that’s it.
-
-<br clear="right"/>
-
-<img align="right" src="assets/v2/update item.png" width=300>
-
-Alternatively, with default instructions, Buddy should
-ask you to provide him with the source code, if there
-is none in the previous conversation.
-
-<br clear="right"/>
-
-### Use external docs as reference
-
-<img align="right" src="assets/v27/external-sources.png" width=300>
-
-You can add links to the request and Code Buddy will include content of the page as part of the request.
-
-<br clear="right"/>
-
-You can find more details about how code buddy works under the hood in [this article](/how-code-buddy-works.html).
+<!-- You can find more details about how code buddy works under the hood in [this article](/how-code-buddy-works.html). -->
 
 If you have any more questions you can ask them at our [Discord](https://discord.gg/JdsepFhEeX)
