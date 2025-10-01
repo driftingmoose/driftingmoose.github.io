@@ -25,14 +25,10 @@ If you have any questions - [join our Discord](https://discord.gg/JdsepFhEeX) to
 
 ## Quick start
 
-<img align="right" src="assets/v2/buddy empty window.png" width=300>
-
 1. Go to Edit->Project Settings…->Code Buddy
 2. Choose AI provider and [configure it](#configure-ai-providers)
 3. Open Code Buddy by selecting Window -> Code Buddy -> Code with Buddy.
 4. Make your first request
-
-<br clear="right"/>
 
 ## Configure AI Providers
 
